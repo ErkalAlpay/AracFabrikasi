@@ -56,7 +56,9 @@ import java.util.Date;
     public void setHiz(int hizGir) {
         if(hiz < 0){
         this.hiz = 0;}
-        else this.hiz = hizGir;
+        else if(hiz>=0 && hizGir <= maxHiz){
+        this.hiz = hizGir;
+        }
         
     }
 

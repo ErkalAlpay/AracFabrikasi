@@ -12,7 +12,6 @@ public class Main {
         m1.gazaBas();
 
         m1.gazaBas();
-
         
 
         System.out.println(m1.getHiz());
