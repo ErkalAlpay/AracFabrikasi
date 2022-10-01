@@ -2,15 +2,22 @@ public class Main {
     public static void main(String[] args) {
         
        
-        Kamyon kamyon = new K2();
+        Minibus m1 = new M1();
 
 
-        kamyon.araciCalistir();
+        m1.araciCalistir();
 
-        kamyon.gazaBas();
+        System.out.println(m1.AracCalisiyorMu());
 
-        System.out.println(kamyon.getHiz());
+        m1.gazaBas();
+
+        m1.gazaBas();
+
+        
+
+        System.out.println(m1.getHiz());
        
+        
         
 }
 }

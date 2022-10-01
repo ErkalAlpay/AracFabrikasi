@@ -1,19 +1,18 @@
-public abstract class Kamyon extends Arac {
+    abstract class Kamyon extends Arac {
 
     private boolean damper;
     private int yukKapasitesi;
     private boolean klima;
     private int kamyonSayisi;
-    private String aracModeli;
+   
 
    
     public Kamyon(boolean damper, int yukKapasitesi, boolean klima, String aracModeli) {
-        super(26.7, 120, 8, "Kamyon");
+        super(26.7, 120, 8, aracModeli);
 
         this.damper = damper;
         this.yukKapasitesi = yukKapasitesi;
         this.klima = klima;
-        this.aracModeli = aracModeli;
         
         kamyonSayisi++;
 
@@ -25,16 +24,11 @@ public abstract class Kamyon extends Arac {
     }
 
     
-    public boolean araciCalistir(){
-        setAracCalisiyorMu(true);
-        System.out.println("Araç Modeli = " + getAracModeli() +"\n"+ getUretimYili() + "\n" + "Araç çalıştı");
-        return AracCalisiyorMu();
-        
-    }
+    
 
 
     public int gazaBas(){
-        if(getHiz()<180 && AracCalisiyorMu()){
+        if(getHiz()<120 && AracCalisiyorMu()){
         setHiz(getHiz()+ 5);}
         
         return getHiz();
@@ -47,9 +41,6 @@ public abstract class Kamyon extends Arac {
         return getHiz();
     }
 
-    public String getAracModeli() {
-        return aracModeli;
-    }
     public boolean damperVarmi() {
         return damper;
     }

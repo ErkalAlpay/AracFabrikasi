@@ -1,15 +1,15 @@
-public abstract class Minibus extends Arac {
+abstract class Minibus extends Arac {
 
 
     private int minibusSayisi;
     private int koltukSayisi;
     private boolean klima;
     private boolean otomatikKapi;
-    private String aracModeli;
+   
 
 
-    public Minibus(boolean klima, boolean otomatikKapi, String aracModeli) {
-        super(12.4, 160, 2.5, "Minibüs");
+    Minibus(boolean klima, boolean otomatikKapi, String aracModeli) {
+        super(12.4, 160, 2.5, aracModeli);
         
         this.klima = klima;
         this.koltukSayisi = 20;
@@ -22,26 +22,19 @@ public abstract class Minibus extends Arac {
         + "\n" + "Otomatik kapılı mı = " + otomatikKapilimi() + "\n" + "\n"+ "Max Hız = " + getMaxHiz() );
     }
 
-    
-    public boolean araciCalistir(){
-        setAracCalisiyorMu(true);
-        System.out.println("Araç Modeli = " + getAracModeli() +"\n"+ getUretimYili() + "\n" + "Araç çalıştı");
-        return AracCalisiyorMu();
-        
-    }
 
 
-    public int gazaBas(){
-        if(getHiz()<180 && AracCalisiyorMu()){
+    public void gazaBas(){
+        if(getHiz()<160 && AracCalisiyorMu()){
         setHiz(getHiz()+ 10);}
         
-        return getHiz();
+        
     }
 
-    public int freneBas(){
+    public void freneBas(){
         if(getHiz()>0){setHiz(getHiz()-10);
     }
-        return getHiz();
+    
     }
 
     public int getMinibusSayisi() {
@@ -60,8 +53,6 @@ public abstract class Minibus extends Arac {
         return otomatikKapi;
     }
 
-    public String getAracModeli() {
-        return aracModeli;
-    }
+    
     
 }

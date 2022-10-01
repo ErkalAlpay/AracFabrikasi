@@ -1,39 +1,29 @@
-public abstract class  Otomobil extends Arac {
+    abstract class  Otomobil extends Arac {
 
     private boolean klima;
     private String vitesTuru;
     private boolean ustuAcik;
-    private String aracModeli;
     private int toplamOtomobil;
 
 
 
 
 
-    public Otomobil(boolean klima, String vitesTuru, boolean ustuAcik, String aracModeli) {
-        super(6.8, 180, 2.5, "Otomobil");
+        Otomobil(boolean klima, String vitesTuru, boolean ustuAcik, String aracModeli) {
+        super(6.8, 180, 2.5, aracModeli);
         this.klima = klima;
         this.vitesTuru = vitesTuru;
         this.ustuAcik = ustuAcik;
-        this.aracModeli = aracModeli;
         toplamOtomobil++;
 
         
     }
-
-    //  ARAÇ MODELİNİ ALT SINIFTA VERDİĞİMDEN DOLAYI  BU METHODLARI ÜST SINIFTA YAZAMADİM
     public void ozellikleriYazdir(){
         System.out.println("Araç Modeli = "+ getAracModeli() + "\n" + "Araç Motoru = " + getMotorHacmi() + "\n" + "Klima = " + klimaVarmi() 
         + "\n" + "Üstü Açık mı = " + ustuAcikmi() + "\n" + "Vites Türü = " + getVitesTuru()+ "\n"+ "Max Hız = " + getMaxHiz() );
     }
 
     
-    public boolean araciCalistir(){
-        setAracCalisiyorMu(true);
-        System.out.println("Araç Modeli = " + getAracModeli() +"\n"+ getUretimYili() + "\n" + "Araç çalıştı");
-        return AracCalisiyorMu();
-        
-    }
 
 
     public int gazaBas(){
@@ -55,9 +45,7 @@ public abstract class  Otomobil extends Arac {
     }
 
 
-    public String getAracModeli() {
-        return aracModeli;
-    }
+  
 
     public boolean klimaVarmi() {
         return klima;

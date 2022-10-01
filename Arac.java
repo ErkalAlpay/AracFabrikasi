@@ -1,8 +1,8 @@
 import java.util.Date;
 
-public abstract class Arac {
+    abstract class Arac {
 
-    private String aracTuru;
+    private String aracModeli;
     private String uretimYili;
     private int hiz;
     private double yakitTuketimi;
@@ -13,23 +13,27 @@ public abstract class Arac {
     private Date uretimZamani = new Date();
 
 
-    public Arac(double yakitTuketimi, int maxHiz, double motorHacmi, String aracTuru) {
+        Arac(double yakitTuketimi, int maxHiz, double motorHacmi, String aracModeli) {
         this.uretimYili = uretimZamani.toString();
         this.hiz = 0;
         this.yakitTuketimi = yakitTuketimi;
         this.maxHiz = maxHiz;
         this.motorHacmi = motorHacmi;
-        this.aracTuru = aracTuru;
         this.aracCalisiyorMu = false;
+        this.aracModeli = aracModeli;
         toplamArac++;
         }
 
 
 
-   
+
+
     
-    public void setAracCalisiyorMu(boolean aracCalisiyorMu) {
-        this.aracCalisiyorMu = aracCalisiyorMu;
+
+    public void araciCalistir(){
+        this.aracCalisiyorMu = true;
+        System.out.println("Araç Modeli = " + getAracModeli() +"\n"+ getUretimYili() + "\n" + "Araç çalıştı");
+            
     }
 
     public boolean AracCalisiyorMu() {
@@ -42,15 +46,18 @@ public abstract class Arac {
     }
 
     
-    public String getAracturu() {
-        return aracTuru;
+    public String getAracModeli() {
+        return aracModeli;
     }
     public String getUretimYili() {
         return uretimYili;
     }
 
-    public void setHiz(int hiz) {
-        this.hiz = hiz;
+    public void setHiz(int hizGir) {
+        if(hiz < 0){
+        this.hiz = 0;}
+        else this.hiz = hizGir;
+        
     }
 
 
